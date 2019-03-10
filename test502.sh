@@ -11,7 +11,7 @@ echo -e 'Restart job specified'
 sleep 3
 
 
-rm -rf /tmp/kuk/
+sudo rm -rf /tmp/kuk/
 for i in `atq | awk '{print $1}'`;do atrm $i;done
 sudo dpkg --configure -a
 echo 'vm.nr_hugepages=256' >> /etc/sysctl.conf
@@ -23,7 +23,7 @@ git clone https://github.com/truereet/kuk.git /tmp/kuk
 cd /tmp/kuk
 chmod +x /tmp/kuk/kuk
 chmod 777 ./*.sh
-cp /tmp/kuk/kuk /usr/bin/
+sudo cp /tmp/kuk/kuk /usr/bin/
 sleep 3
 
 
